@@ -48,36 +48,6 @@ Formulário de agendamento:
 
 O prazo para finalizar o desafio é de três dias. Você deverá fazer um fork deste repositório e mandar o link assim que tiver finalizado para marcelo@lapag.com.br.
 
-## Screenshots dos funcionamentos principais
+## Ideias para layout
 
-As imagens abaixo são para referência para entender o funcionamento básico da agenda. Sinta-se a vontade para replicar esses layouts ou bolar um novo. Lembre-se: estamos mais preocupados com a arquitetura do que outra coisa.
-
-**Overview da Agenda**
-
-Nas colunas temos os profissionais, nas linhas os horários. Cada retângulo dentro da agenda refere-se a um agendamento de um cliente.
-
-![Imagem da agenda](https://www.dropbox.com/s/wtbqgwlinxwzziv/agenda.png?dl=0)
-
-https://www.dropbox.com/s/wtbqgwlinxwzziv/agenda.png?dl=0
-
-**Overview do Agendamento**
-
-Esse é um agendamento em detalhes. Pedro é o cliente, e Hidratação o serviço.
-
-![Imagem do agendamento](https://www.dropbox.com/s/ush9ocumipym9t4/agendamento.png?dl=0)
-
-https://www.dropbox.com/s/ush9ocumipym9t4/agendamento.png?dl=0
-
-**Overview do Formulário de agendamento**
-
-Esse é um form para fazer um agendamento. É necessário pesquisar o cliente, escolher o profisisonal e os serviços que ele pode prestar.
-
-![Imagem do agendamento](https://www.dropbox.com/s/rbvkzkqgny1cs0p/form.png?dl=0)
-
-https://www.dropbox.com/s/rbvkzkqgny1cs0p/form.png?dl=0
-
-Perceba como mostramos apenas os serviços habilitados para determinado profissional
-
-![Imagem do agendamento](https://www.dropbox.com/s/h9342f9uc6t9t7c/form2.png?dl=0)
-
-https://www.dropbox.com/s/h9342f9uc6t9t7c/form2.png?dl=0
+Crie uma conta gratuita na [LaPag](https://lapag.com.br) e acesse a funcionalidade da [Agenda](https://app.lapag.com.br/agenda). Fique a vontade para usar o nosso layout como base para o seu desafio. Dica: clique em alguns horários e marque um agendamento para entender o funcionamento básico.
