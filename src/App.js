@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import "./components/header/style.css";
 import Header from './components/header/index'
+import Card from './components/card/index'
+import Button from './components/button/index'
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 import MyCalendar from "./components/calendar";
 
@@ -42,6 +44,7 @@ export default function App() {
       {/* {services.map(i => {
         return (
           <div key={i.id}  >
+
             {services.map(i => <span key={i._id}> {i.name} </span>)}
             <p name={i.name} duration={i.duration} />
             <div>

@@ -30,4 +30,20 @@ const MyCalendar = props => {
       </div>
     );
 }
+
+const MyCalendar = props => (
+    <div>
+        <Calendar
+            selectable
+            localizer={localizer}
+            events={myEventsList}
+            startAccessor="start"
+            endAccessor="end"
+            onSelectEvent={event => alert(event.title)}
+            onSelectSlot={handleSelect}
+            style={{ height: 500 }}
+        />
+    </div>
+)
+
 export default MyCalendar;
