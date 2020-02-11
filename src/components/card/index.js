@@ -11,7 +11,7 @@ const Card = props => {
             <p>{props.duration}</p>
             <Button>
                 <IconButton aria-label="delete"
-                   className={css(styles.deleteButton)}
+                   className={props.className}
                    onClick={props.handleClick}>
                    <DeleteIcon fontSize="small" />
                </IconButton>   

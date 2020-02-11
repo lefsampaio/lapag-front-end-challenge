@@ -1,20 +1,21 @@
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks";
 
-export const returnProfessionals = () =>
+const apiMocks = () =>{
+ const returnProfessionals = () =>
   new Promise((resolve, reject) => {
     setTimeout(function() {
       resolve(professionalMocks);
     }, 100);
   });
 
-export const returnServices = () =>
+ const returnServices = () =>
   new Promise((resolve, reject) => {
     setTimeout(function() {
       resolve(servicesMocks);
     }, 200);
   });
 
-export const returnClients = clientName => {
+ const returnClients = clientName => {
   if (!clientName) {
     clientName = "";
   }
@@ -27,3 +28,5 @@ export const returnClients = clientName => {
     }, 300);
   });
 };
+}
+export default apiMocks;
