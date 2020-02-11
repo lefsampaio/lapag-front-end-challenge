@@ -3,8 +3,8 @@ import logo from "./logo-white.png";
 import "./App.css";
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 
-
 export default function App() {
+
   const [services, setServices] = useState([]);
   const [professional, setProfessional] = useState([]);
   const [client, setClient] = useState([]);
