@@ -7,6 +7,7 @@ import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 export default function App() {
   const [services, setServices] = useState([]);
   const [professional, setProfessional] = useState([]);
+  const [client, setClient] = useState([]);
 
 
   useEffect(() => {
@@ -22,6 +23,12 @@ export default function App() {
     }))
     setProfessional(getProfessionals);
 
+    const getClient = clientsMocks.map((doc) => ({
+      _id: doc._id,
+      ...doc
+    }))
+    setClient(getClient);
+
   }, []);
 
   return (
@@ -32,12 +39,14 @@ export default function App() {
       </div>
       {services.map(i => {
         return (
-          <div>
+          <div key={i.id}  >
             {services.map(i => <span key={i._id}> {i.name} </span>)}
-            <p key={i._id} name={i.name} />
-
-            {professional.map(i => <span key={i._id}> {i.name} </span>)}
-            <p key={i._id} name={i.name} />
+            <p name={i.name} duration={i.duration} />
+            <div>
+              {professional.map(i => <span key={i._id}> {i.name} </span>)}
+              <p name={i.name} />
+              {client.map(i => <span key={i._id}> {i.name} </span>)}
+              <p name={i.name} /></div>
           </div>)
       })
       }
