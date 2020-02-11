@@ -40,11 +40,13 @@ export default function App() {
   return (
     <div className="App">
       <Header/>
-      {services.map(i => {
+      <div className="App-header">
+      </div>
+      <MyCalendar/>
+      {/* {services.map(i => {
         return (
           <div key={i.id}  >
-          <Button text='oi' type='submit'/>
-          <MyCalendar />
+
             {services.map(i => <span key={i._id}> {i.name} </span>)}
             <p name={i.name} duration={i.duration} />
             <div>
@@ -54,7 +56,7 @@ export default function App() {
               <p name={i.name} /></div>
           </div>)
       })
-      }
+      } */}
     </div>
   );
 }
