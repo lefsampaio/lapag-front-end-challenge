@@ -4,7 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 
 const Card = props => {
-    return(
+    return (
         <div>
             <p>{props.name}</p>
             <p>{props.name}</p>

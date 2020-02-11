@@ -182,7 +182,6 @@ const handleSelect = ({ start, end }) => {
         })
 }
 const MyCalendar = props => (
-
     <div>
         <Calendar
             selectable
@@ -195,8 +194,6 @@ const MyCalendar = props => (
             style={{ height: 500 }}
         />
     </div>
-
 )
 
 export default MyCalendar;
-

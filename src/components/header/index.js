@@ -10,7 +10,7 @@ function Header () {
             <h1 className="App-title">AGENDAMENTO</h1>
             <img width="220" height="161" 
             src="https://galsalao.com/wp-content/uploads/2020/01/ezgif.com-gif-maker.gif"
-            class="logo" alt=""></img>
+            className="logo" alt=""></img>
             
           </div>
           <p className="App-intro"></p>
