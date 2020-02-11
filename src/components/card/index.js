@@ -3,7 +3,6 @@ import Button from '../button/index.js'
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
 
-
 const Card = props => {
     return(
         <div>
