@@ -1,7 +1,7 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import Button from '../button/index.js'
 import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/DeleteOutline';
+import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 
 const Card = props => {
     return(
@@ -13,7 +13,7 @@ const Card = props => {
                 <IconButton aria-label="delete"
                    className={props.className}
                    onClick={props.handleClick}>
-                   <DeleteIcon fontSize="small" />
+                   <DeleteOutlineOutlinedIcon fontSize="small" />
                </IconButton>   
             </Button>
         </div>
