@@ -1,9 +1,11 @@
 
 import React, { useState, useEffect } from "react";
-import logo from "./logo-white.png";
 import "./components/header/style.css";
 import Header from './components/header/index'
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
+import Calendario from "./components/calendar";
+// import Card from "./components/card";
+
 
 export default function App() {
 
@@ -41,6 +43,7 @@ export default function App() {
       {services.map(i => {
         return (
           <div key={i.id}  >
+            <Calendario/>
             {services.map(i => <span key={i._id}> {i.name} </span>)}
             <p name={i.name} duration={i.duration} />
             <div>
