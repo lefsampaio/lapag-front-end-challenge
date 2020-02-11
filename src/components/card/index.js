@@ -1,13 +1,16 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import Button from '../button/index.js'
 
 const Card = props => {
-    return(
+    return (
         <div>
             <p>{props.name}</p>
             <p>{props.name}</p>
             <p>{props.duration}</p>
-            <Button text='oi'/>
+            <Button>
+                className={props.className}
+                onClick={props.handleClick}>
+            </Button>
         </div>
     )
 }

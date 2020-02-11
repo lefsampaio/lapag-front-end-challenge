@@ -5,9 +5,12 @@ import Header from './components/header/index'
 import Card from './components/card/index'
 import Button from './components/button/index'
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
+import MyCalendar from "./components/calendar";
+// import Card from "./components/card";
 
 
 export default function App() {
+
   const [services, setServices] = useState([]);
   const [professional, setProfessional] = useState([]);
   const [client, setClient] = useState([]);
@@ -40,7 +43,8 @@ export default function App() {
       {services.map(i => {
         return (
           <div key={i.id}  >
-          <Button text='oi'/>
+          <Button text='oi' type='submit'/>
+          <MyCalendar />
             {services.map(i => <span key={i._id}> {i.name} </span>)}
             <p name={i.name} duration={i.duration} />
             <div>

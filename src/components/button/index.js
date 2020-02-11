@@ -5,7 +5,7 @@ const Button = (props) => {
     return (
     <Fragment>
  
-      <MDBBtn color="brown"  onClick={props.handleClick} className='button' key={props.id}> {props.text}</MDBBtn>
+      <MDBBtn color="brown"  onClick={props.handleClick} className='button' key={props.id} type={props.type}> {props.text}</MDBBtn>
      
     </Fragment>
   );
