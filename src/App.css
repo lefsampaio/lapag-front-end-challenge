@@ -6,9 +6,13 @@
   height: 30px;
 }
 
+.logo{
+  float: left;
+}
+
 .App-header {
-  background-color: #222;
-  height: 60px;
+  background-color: #FD554D;
+  height: 100px;
   padding: 1em;
   color: white;
   display: flex;

@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from "react";
 import logo from "./logo-white.png";
-import "./App.css";
+import "./components/header/style.css";
+import Header from './components/header/index'
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 
 export default function App() {
@@ -33,9 +35,8 @@ export default function App() {
 
   return (
     <div className="App">
+      <Header/>
       <div className="App-header">
-        <h1 className="App-title">Front-End Challenge</h1>
-        <img src={logo} className="App-logo" alt="logo" />
       </div>
       {services.map(i => {
         return (
@@ -53,5 +54,6 @@ export default function App() {
     </div>
   );
 }
+
 
 
