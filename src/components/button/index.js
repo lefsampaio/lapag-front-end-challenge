@@ -1,11 +1,9 @@
 import React, { Fragment } from "react";
-import { MDBBtn } from "mdbreact";
+import './style.css'
 
 const Button = (props) => {
     return (
-    <Fragment>
-      <MDBBtn color="brown"  onClick={props.handleClick} className='button' key={props.id} type={props.type}> {props.text}</MDBBtn>
-    </Fragment>
+      <button  onClick={props.handleClick} className='button' key={props.id} type={props.type}> {props.text}</button>
   );
 }
 
