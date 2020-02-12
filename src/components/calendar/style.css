@@ -43,3 +43,11 @@
 .md-add-event-popup {
     max-width: 400px;
 }
+
+.modal {
+    width: 200px;
+    height: 500px;
+    margin: 30px;
+    padding: 30px;
+    z-index: 1000;
+}

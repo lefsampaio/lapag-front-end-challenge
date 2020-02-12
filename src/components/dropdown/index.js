@@ -1,19 +1,20 @@
 import React from 'react';
-import styled from '@emotion/styled';
+// import styled from '@emotion/styled';
 import Select from 'react-dropdown-select';
 import './style.css'
 
-const Dropdown = ({ options, title }) => (
+const Dropdown = ({ arrName }) => (
   <React.Fragment>
     <Select
       searchable
       required
-      options={options}
+      options= {arrName}
       values={[]}
+      name='Procedimentos'
       className='dropdown'
       dropdownPosition="auto"
       onChange={(value) =>
-        console.log(`%c > onChange ${title} `, 'background: #555; color: tomato', value)
+        console.log(value)
       }
     />
   </React.Fragment>
@@ -21,11 +22,11 @@ const Dropdown = ({ options, title }) => (
 
 Dropdown.propTypes = {};
 
-const Title = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 50px;
-`;
+// const Title = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: baseline;
+//   width: 50px;
+// `;
 
 export default Dropdown;
