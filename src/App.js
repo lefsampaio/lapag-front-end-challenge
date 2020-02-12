@@ -51,7 +51,6 @@ export default function App() {
   return (
     <div className="App">
       <Header/>
-      <select className='select'>{services.map(i=> <option value = {i.id}>{i.name}</option>)}</select>
       {professional.map(i => <div key={i._id}> <p className='professional-name'>{i.nickname}</p> <MyCalendar arrname={professionalName}/></div>)}
       {/* {services.map(i => {
         return (

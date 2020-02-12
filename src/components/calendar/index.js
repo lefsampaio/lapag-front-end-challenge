@@ -1,7 +1,7 @@
 import { Calendar, momentLocalizer, Views } from 'react-big-calendar'
 import Modal from 'react-modal';
 import Button from '../button/index'
-import Dropdown from '../dropdown/index'
+import {servicesMocks} from '../../mocks/mocks'
 import moment from 'moment';
 import React, { useState } from 'react'
 const myEventsList = [
@@ -12,16 +12,29 @@ const localizer = momentLocalizer(moment)
 const MyCalendar = props => {
   const [eventsList, setEventsList] = useState(myEventsList);
   const [modalIsOpen,setIsOpen] = useState(false);
-  const handleSelect = ({ start, end }) => {
-      const title = setIsOpen(true)
-      if (title) {
-        setEventsList([ ...eventsList, { start, end, title } ]);
-      }
+  const [start, setStart] = useState()
+  const [end, setEnd] = useState()
+  const [title, setTitle] = useState()
+
+  const handleTitleChange = ev => {
+    ev.preventDefault();
+    setTitle(ev.target.value);
   }
 
-  function closeModal( { arrName} ){
-    setIsOpen(false);
+  const handleSelect = ({ start, end }) => {
+    setIsOpen(true)
+    setStart(start)
+    setEnd(end)
   }
+
+  const closeModal = () => {
+    setIsOpen(false);
+    if (title) {
+      setEventsList([ ...eventsList, { start, end, title } ]);
+
+    }
+  }
+
     return (
       <div>
           <Calendar
@@ -42,18 +55,16 @@ const MyCalendar = props => {
           onRequestClose={closeModal}
           contentLabel="Example Modal"
         className='modal'>
-
-          <h2 className='title'>Hello</h2>
-    <select className='select'><option> {arrName}</option></select>
-          <Button handleClick={closeModal}>close</Button>
-          <div>Agendamento</div>
+          <h2 className='title'>Agendamento</h2>
           <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
+            <p>Cliente:</p>
+            <input type="text"
+                onChange={handleTitleChange}/>
           </form>
+          <br/>
+          <p>Serviços:</p>
+          <select>{servicesMocks.map(i=> <option value = {i.id}>{i.name}</option>)}</select>
+          <Button handleClick={closeModal} text='agendar'></Button>
         </Modal>
       </div>
     );
