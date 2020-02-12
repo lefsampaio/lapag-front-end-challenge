@@ -14,7 +14,7 @@ const MyCalendar = props => {
   const [modalIsOpen,setIsOpen] = useState(false);
   const [start, setStart] = useState()
   const [end, setEnd] = useState()
-  const [title, setTitle] = useState()
+  const [title, setTitle] = useState([])
 
   const customStyles = {
     content : {
@@ -29,7 +29,7 @@ const MyCalendar = props => {
 
   const handleTitleChange = ev => {
     ev.preventDefault();
-    setTitle(ev.target.value);
+    setTitle([ev.target.value]);
   }
 
   const handleSelect = ({ start, end }) => {
@@ -47,6 +47,11 @@ const MyCalendar = props => {
     }
   }
 
+  const serviceSelect=(e)=> {
+    e.persist()
+    setTitle([...title," - ", e.target.value])
+  } 
+
     return (
       <div>
           <Calendar
@@ -58,7 +63,7 @@ const MyCalendar = props => {
               max={new Date(2020, 1, 0, 20, 0, 0)}
               startAccessor="start"
               endAccessor="end"
-              onSelectEvent={event => event.title}
+              onSelectEvent={event => event.title.join("-")}
               onSelectSlot={handleSelect}
               style={{ height: 500 }}
           />
@@ -76,7 +81,7 @@ const MyCalendar = props => {
           </form>
           <br/>
           <p>Serviços:</p>
-          <select>{servicesMocks.map(i=> <option value = {i.id}>{i.name}</option>)}</select>
+          <select onChange={serviceSelect}>{servicesMocks.map(i=> <option value = {i.id}>{i.name}</option>)}</select>
           <Button handleClick={closeModal} text='agendar'></Button>
         </Modal>
       </div>
