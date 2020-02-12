@@ -21,6 +21,7 @@ const MyCalendar = props => {
     setTitle(ev.target.value);
   }
 
+
   const handleSelect = ({ start, end }) => {
     setIsOpen(true)
     setStart(start)
@@ -64,7 +65,8 @@ const MyCalendar = props => {
           <br/>
           <p>Serviços:</p>
           <select>{servicesMocks.map(i=> <option value = {i.id}>{i.name}</option>)}</select>
-          <Button handleClick={closeModal} text='agendar'></Button>
+          <br/>
+          <div className='button-box'><Button handleClick={closeModal} text='Agendar'></Button></div>
         </Modal>
       </div>
     );
