@@ -21,6 +21,8 @@ const MyCalendar = props => {
               localizer={localizer}
               events={eventsList}
               defaultView={Views.DAY}
+              min={new Date(2020, 1, 0, 8, 0, 0)}
+              max={new Date(2020, 1, 0, 20, 0, 0)}
               startAccessor="start"
               endAccessor="end"
               onSelectEvent={event => alert(event.title)}
@@ -30,20 +32,5 @@ const MyCalendar = props => {
       </div>
     );
 }
-
-const MyCalendar = props => (
-    <div>
-        <Calendar
-            selectable
-            localizer={localizer}
-            events={myEventsList}
-            startAccessor="start"
-            endAccessor="end"
-            onSelectEvent={event => alert(event.title)}
-            onSelectSlot={handleSelect}
-            style={{ height: 500 }}
-        />
-    </div>
-)
 
 export default MyCalendar;
