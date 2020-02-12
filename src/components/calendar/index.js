@@ -16,6 +16,17 @@ const MyCalendar = props => {
   const [end, setEnd] = useState()
   const [title, setTitle] = useState()
 
+  const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)'
+    }
+  };
+
   const handleTitleChange = ev => {
     ev.preventDefault();
     setTitle(ev.target.value);
@@ -25,6 +36,7 @@ const MyCalendar = props => {
     setIsOpen(true)
     setStart(start)
     setEnd(end)
+    setTitle('')
   }
 
   const closeModal = () => {
@@ -53,8 +65,9 @@ const MyCalendar = props => {
           <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
-          contentLabel="Example Modal"
-        className='modal'>
+          style={customStyles}
+
+        >
           <h2 className='title'>Agendamento</h2>
           <form>
             <p>Cliente:</p>
