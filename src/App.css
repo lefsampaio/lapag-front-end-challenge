@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 30px;
-}
-
 .logo{
-  float: left;
-}
-
-.App-header {
-  background-color: #FD554D;
+  float: right;
+  margin-right: 1090px;
+  margin-top: -80px;
   height: 100px;
-  padding: 1em;
-  color: white;
-  display: flex;
+  width: 125px;
+}
+.App-header {
+  background-color:white;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+  color: #FD554D;
   align-items: center;
-  justify-content: space-between;
 }
-
 .App-title {
-  font-size: 1.5em;
+  font-size: 30px;
+  margin-top: 50px;
+  float: right;
 }
-
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

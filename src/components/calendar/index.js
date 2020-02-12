@@ -15,10 +15,27 @@ const MyCalendar = props => {
   const [start, setStart] = useState()
   const [end, setEnd] = useState()
   const [title, setTitle] = useState()
+  const [service, setService] = useState()
+
+  const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)'
+    }
+  };
 
   const handleTitleChange = ev => {
     ev.preventDefault();
     setTitle(ev.target.value);
+  }
+
+  const selectService = (e) => {
+    e.persist();
+    setService(e.target.value)
   }
 
 
@@ -26,12 +43,14 @@ const MyCalendar = props => {
     setIsOpen(true)
     setStart(start)
     setEnd(end)
+    setTitle('')
+    setService('')
   }
 
   const closeModal = () => {
     setIsOpen(false);
     if (title) {
-      setEventsList([ ...eventsList, { start, end, title } ]);
+      setEventsList([ ...eventsList, { start, end, title, service } ]);
 
     }
   }
@@ -54,17 +73,18 @@ const MyCalendar = props => {
           <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
-          contentLabel="Example Modal"
-        className='modal'>
+          style={customStyles}
+
+        >
           <h2 className='title'>Agendamento</h2>
           <form>
             <p>Cliente:</p>
-            <input type="text"
+            <input type="text" className='client'
                 onChange={handleTitleChange}/>
           </form>
           <br/>
           <p>Serviços:</p>
-          <select>{servicesMocks.map(i=> <option value = {i.id}>{i.name}</option>)}</select>
+          <select onchange={selectService} id='select'>{servicesMocks.map(i=> <option value = {i.id}>{i.name}</option>)}</select>
           <br/>
           <div className='button-box'><Button handleClick={closeModal} text='Agendar'></Button></div>
         </Modal>
