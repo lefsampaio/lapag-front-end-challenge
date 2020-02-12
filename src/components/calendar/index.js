@@ -10,16 +10,29 @@ const localizer = momentLocalizer(moment)
 const MyCalendar = props => {
   const [eventsList, setEventsList] = useState(myEventsList);
   const [modalIsOpen,setIsOpen] = useState(false);
-  const handleSelect = ({ start, end }) => {
-      const title = setIsOpen(true)
-      if (title) {
-        setEventsList([ ...eventsList, { start, end, title } ]);
-      }
+  const [start, setStart] = useState()
+  const [end, setEnd] = useState()
+  const [title, setTitle] = useState()
+
+  const handleTitleChange = ev => {
+    ev.preventDefault();
+    setTitle(ev.target.value);
   }
 
-  function closeModal(){
-    setIsOpen(false);
+  const handleSelect = ({ start, end }) => {
+    setIsOpen(true)
+    setStart(start)
+    setEnd(end)
   }
+
+  const closeModal = () => {
+    setIsOpen(false);
+    if (title) {
+      setEventsList([ ...eventsList, { start, end, title } ]);
+
+    }
+  }
+
     return (
       <div>
           <Calendar
@@ -39,17 +52,15 @@ const MyCalendar = props => {
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           contentLabel="Example Modal"
+
         >
 
           <h2 >Hello</h2>
           <button onClick={closeModal}>close</button>
           <div>I am a modal</div>
           <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
+            <input type="text"
+                onChange={handleTitleChange}/>
           </form>
         </Modal>
       </div>
