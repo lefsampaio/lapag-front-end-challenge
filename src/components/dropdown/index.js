@@ -3,18 +3,18 @@ import React from 'react';
 import Select from 'react-dropdown-select';
 import './style.css'
 
-const Dropdown = ({ options, title }) => (
+const Dropdown = ({ arrName }) => (
   <React.Fragment>
     <Select
       searchable
       required
-      style={{widht: '5px'}}
-      options={options}
+      options= {arrName}
       values={[]}
+      name='Procedimentos'
       className='dropdown'
       dropdownPosition="auto"
       onChange={(value) =>
-        console.log(`%c > onChange ${title} `, 'background: #555; color: tomato', value)
+        console.log(value)
       }
     />
   </React.Fragment>

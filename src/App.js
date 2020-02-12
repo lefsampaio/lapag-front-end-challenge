@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import "./components/header/style.css";
 import Header from './components/header/index'
@@ -7,12 +6,11 @@ import Button from './components/button/index'
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 import MyCalendar from "./components/calendar";
 import Dropdown from './components/dropdown/index'
-import Modal from './components/modal/index'
-// import Card from "./components/card";
+
 
 
 export default function App() {
- 
+
   const [services, setServices] = useState([]);
   const [professional, setProfessional] = useState([]);
   const [client, setClient] = useState([]);
@@ -37,38 +35,24 @@ export default function App() {
     }))
     setClient(getClient);
 
+
   }, []);
 
-  console.log(professional.document_number)
 
- const mapdoprof = () => {
-   const arr = []
-   professional.map(prof => {arr.push(prof.document_number)})
-   return arr
- }
-
-  const docnumber = () => {
-    const arr = []
-    services.map(e => 
-      e.available_professionals.map (prof => {
-        if(prof.cpf === professional.document_number) {
-          arr.push(prof.cpf, )
-        }
-        console.log(arr)
-      })
-      )
+  const professionalName = () => {
+    const arrName = []
+    professional.map(i => {
+      arrName.push(i.nickname)
+    })
+    return arrName
   }
-  docnumber()
-  mapdoprof()
-
-
+ professionalName()
 
   return (
     <div className="App">
       <Header/>
-      <Dropdown/>
-      {professional.map(i => <div key={i._id}> <p className='professional-name'>{i.nickname}</p> <MyCalendar /></div>)}
-      
+      <select className='select'>{services.map(i=> <option value = {i.id}>{i.name}</option>)}</select>
+      {professional.map(i => <div key={i._id}> <p className='professional-name'>{i.nickname}</p> <MyCalendar arrname={professionalName}/></div>)}
       {/* {services.map(i => {
         return (
           <div key={i.id}  >
