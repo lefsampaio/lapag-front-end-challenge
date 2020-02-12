@@ -6,39 +6,54 @@ import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 import MyCalendar from "./components/calendar";
 
 export default function App() {
- 
-  // const [services, setServices] = useState([]);
-  // const [professional, setProfessional] = useState([]);
-  // const [client, setClient] = useState([]);
+
+  const [services, setServices] = useState([]);
+  const [professional, setProfessional] = useState([]);
+  const [client, setClient] = useState([]);
 
 
-  // useEffect(() => {
-  //   const getServices = servicesMocks.map((doc) => ({
-  //     _id: doc._id,
-  //     ...doc
-  //   }))
-  //   setServices(getServices);
+  useEffect(() => {
+    const getServices = servicesMocks.map((doc) => ({
+      _id: doc._id,
+      ...doc
+    }))
+    setServices(getServices);
 
-  //   const getProfessionals = professionalMocks.map((doc) => ({
-  //     _id: doc._id,
-  //     ...doc
-  //   }))
-  //   setProfessional(getProfessionals);
+    const getProfessionals = professionalMocks.map((doc) => ({
+      _id: doc._id,
+      ...doc
+    }))
+    setProfessional(getProfessionals);
 
-  //   const getClient = clientsMocks.map((doc) => ({
-  //     _id: doc._id,
-  //     ...doc
-  //   }))
-  //   setClient(getClient);
+    const getClient = clientsMocks.map((doc) => ({
+      _id: doc._id,
+      ...doc
+    }))
+    setClient(getClient);
 
-  // }, []);
+  }, []);
 
+
+  const pegarcpf = () => {
+    const arr = [];
+    services.map(elem => {
+      elem.available_professionals.filter(prof => {   
+       prof.cpf === professional.document_number
+        arr.push(prof.cpf, professional.document_number)
+       
+      
+      return  console.log(arr)
+     })
+
+    })
+  }
+  pegarcpf();
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <div className="App-header">
       </div>
-      <MyCalendar/>
+      <MyCalendar />
       {/* {services.map(i => {
         return (
           <div key={i.id}  >
