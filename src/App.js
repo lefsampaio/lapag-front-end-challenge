@@ -4,8 +4,6 @@ import Header from './components/header/index'
 import Button from './components/button/index'
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 import MyCalendar from "./components/calendar";
-import Dropdown from './components/dropdown/index'
-
 
 
 export default function App() {
