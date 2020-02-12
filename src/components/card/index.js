@@ -8,8 +8,7 @@ const Card = props => {
             <p>{props.name}</p>
             <p>{props.duration}</p>
             <Button>
-                className={props.className}
-                onClick={props.handleClick}>
+                     
             </Button>
         </div>
     )

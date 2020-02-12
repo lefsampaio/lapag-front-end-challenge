@@ -6,6 +6,8 @@ import Card from './components/card/index'
 import Button from './components/button/index'
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 import MyCalendar from "./components/calendar";
+import Dropdown from './components/dropdown/index'
+import Modal from './components/modal/index'
 // import Card from "./components/card";
 
 
@@ -37,14 +39,44 @@ export default function App() {
 
   }, []);
 
+  console.log(professional.document_number)
+
+ const mapdoprof = () => {
+   const arr = []
+   professional.map(prof => {arr.push(prof.document_number)})
+   return arr
+ }
+
+  const docnumber = () => {
+    const arr = []
+    services.map(e => 
+      e.available_professionals.map (prof => {
+        if(prof.cpf === professional.document_number) {
+          arr.push(prof.cpf, )
+        }
+        console.log(arr)
+      })
+      )
+  }
+  docnumber()
+  mapdoprof()
+
+
+
   return (
     <div className="App">
-      <Header/>
-      {services.map(i => {
+      <Header />
+      <Modal />
+      <div className="App-header">
+      </div>
+      <Button />
+      <MyCalendar />
+
+
+
+      {/* {services.map(i => {
         return (
           <div key={i.id}  >
-          <Button text='oi' type='submit'/>
-          <MyCalendar />
             {services.map(i => <span key={i._id}> {i.name} </span>)}
             <p name={i.name} duration={i.duration} />
             <div>
@@ -54,7 +86,7 @@ export default function App() {
               <p name={i.name} /></div>
           </div>)
       })
-      }
+      } */}
     </div>
   );
 }
