@@ -2,17 +2,14 @@
 import React, { useState, useEffect } from "react";
 import "./components/header/style.css";
 import Header from './components/header/index'
-// import Card from './components/card/index'
-// import Button from './components/button/index'
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 import MyCalendar from "./components/calendar";
 import Dropdown from './components/dropdown/index'
-import Modal from './components/modal/index'
-// import Card from "./components/card";
+
 
 
 export default function App() {
- 
+
   const [services, setServices] = useState([]);
   const [professional, setProfessional] = useState([]);
   const [client, setClient] = useState([]);
@@ -37,37 +34,30 @@ export default function App() {
     }))
     setClient(getClient);
 
+
   }, []);
 
-  console.log(professional.document_number)
 
- const mapdoprof = () => {
-   const arr = []
-   professional.map(prof => {arr.push(prof.document_number)})
-   return arr
- }
+  const pegarcpf = () => {
+    const arr = [];
+    services.map(elem => {
+      elem.available_professionals.filter(prof => {   
+       prof.cpf === professional.document_number
+        arr.push(prof.cpf, professional.document_number)
+       
+      
+      return  console.log(arr)
+     })
 
-  const docnumber = () => {
-    const arr = []
-    services.map(e => 
-      e.available_professionals.map (prof => {
-        if(prof.cpf === professional.document_number) {
-          arr.push(prof.cpf, )
-        }
-        console.log(arr)
-      })
-      )
+    }
+    )
   }
-  docnumber()
-  mapdoprof()
-
-
-
+  pegarcpf();
   return (
     <div className="App">
-      <Header/>
-      <div className="App-header">
-      </div>
+      <Header />
+      <MyCalendar />
+
       {professional.map(i => <span key={i._id}> {i.nickname} <MyCalendar /></span>)}
       
       {/* {services.map(i => {
