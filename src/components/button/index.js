@@ -3,11 +3,9 @@ import { MDBBtn } from "mdbreact";
 
 const Button = (props) => {
     return (
-  
- 
-      <MDBBtn  color="primary">oioi</MDBBtn>
-     
-  
+    <Fragment>
+      <MDBBtn color="brown"  onClick={props.handleClick} className='button' key={props.id} type={props.type}> {props.text}</MDBBtn>
+    </Fragment>
   );
 }
 
