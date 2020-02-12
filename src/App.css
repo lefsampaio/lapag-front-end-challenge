@@ -5,6 +5,7 @@
   height: 100px;
   width: 125px;
 }
+
 .App-header {
   background-color:white;
   height: 100px;
@@ -13,11 +14,13 @@
   color: #FD554D;
   align-items: center;
 }
+
 .App-title {
   font-size: 30px;
   margin-top: 50px;
   float: right;
 }
+
 .App-intro {
   font-size: large;
 }

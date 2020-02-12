@@ -2,23 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./components/header/style.css";
 import Header from './components/header/index'
 import MyCalendar from "./components/calendar";
-import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
-
+import { professionalMocks, clientsMocks } from "./mocks/mocks";
 
 
 export default function App() {
-
-  const [services, setServices] = useState([]);
   const [professional, setProfessional] = useState([]);
   const [client, setClient] = useState([]);
 
-
   useEffect(() => {
-    const getServices = servicesMocks.map((doc) => ({
-      _id: doc._id,
-      ...doc
-    }))
-    setServices(getServices);
 
     const getProfessionals = professionalMocks.map((doc) => ({
       _id: doc._id,
@@ -32,10 +23,7 @@ export default function App() {
     }))
     setClient(getClient);
 
-
   }, []);
-
-
 
   return (
     <div className="App">
