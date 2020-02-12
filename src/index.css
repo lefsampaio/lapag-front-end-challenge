@@ -15,5 +15,6 @@ body {
 
 .select {
   width: 150px;
-  border-radius: ;
+  border-radius: 3px;
+  border: none;
 }

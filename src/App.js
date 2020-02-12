@@ -1,24 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./components/header/style.css";
 import Header from './components/header/index'
-import Button from './components/button/index'
-import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 import MyCalendar from "./components/calendar";
+import { professionalMocks, clientsMocks } from "./mocks/mocks";
 
 
 export default function App() {
-
-  const [services, setServices] = useState([]);
   const [professional, setProfessional] = useState([]);
   const [client, setClient] = useState([]);
 
-
   useEffect(() => {
-    const getServices = servicesMocks.map((doc) => ({
-      _id: doc._id,
-      ...doc
-    }))
-    setServices(getServices);
 
     const getProfessionals = professionalMocks.map((doc) => ({
       _id: doc._id,
@@ -32,24 +23,16 @@ export default function App() {
     }))
     setClient(getClient);
 
-
   }, []);
-
-
-  const professionalName = () => {
-    const arrName = []
-    professional.map(i => {
-      arrName.push(i.nickname)
-    })
-    return arrName
-  }
- professionalName()
-
 
   return (
     <div className="App">
-      <Header/>
-      {professional.map(i => <div key={i._id}> <p className='professional-name'>{i.nickname}</p> <MyCalendar arrname={professionalName}/></div>)}
+      <Header />
+      {professional.map(i =>
+        <div key={i._id}>
+          <p className='professional-name'>{i.nickname}</p>
+          <MyCalendar />
+        </div>)}
     </div>
   );
 }
