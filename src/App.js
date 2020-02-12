@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./components/header/style.css";
 import Header from './components/header/index'
 // import Card from './components/card/index'
-// import Button from './components/button/index'
+import Button from './components/button/index'
 import { professionalMocks, servicesMocks, clientsMocks } from "./mocks/mocks";
 import MyCalendar from "./components/calendar";
 import Dropdown from './components/dropdown/index'
@@ -66,9 +66,8 @@ export default function App() {
   return (
     <div className="App">
       <Header/>
-      <div className="App-header">
-      </div>
-      {professional.map(i => <span key={i._id}> {i.nickname} <MyCalendar /></span>)}
+      <Dropdown/>
+      {professional.map(i => <div key={i._id}> <p className='professional-name'>{i.nickname}</p> <MyCalendar /></div>)}
       
       {/* {services.map(i => {
         return (

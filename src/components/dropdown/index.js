@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled';
+// import styled from '@emotion/styled';
 import Select from 'react-dropdown-select';
 import './style.css'
 
@@ -8,6 +8,7 @@ const Dropdown = ({ options, title }) => (
     <Select
       searchable
       required
+      style={{widht: '5px'}}
       options={options}
       values={[]}
       className='dropdown'
@@ -21,11 +22,11 @@ const Dropdown = ({ options, title }) => (
 
 Dropdown.propTypes = {};
 
-const Title = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 50px;
-`;
+// const Title = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: baseline;
+//   width: 50px;
+// `;
 
 export default Dropdown;

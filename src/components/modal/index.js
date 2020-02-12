@@ -1,11 +1,12 @@
 import React from "react";
 import Popup from "reactjs-popup";
 import Dropdown from '../dropdown/index'
+import Button from '../button/index'
 import './style.css'
 
 
 const Modal = () => (
-  <Popup trigger={<button className="button"> AGENDAR </button>} modal>
+  <Popup trigger={<button className="button"> Agendar </button>} modal>
     {close => (
       <div className="modal">
         <a className="close" onClick={close}>
@@ -14,12 +15,15 @@ const Modal = () => (
         <div className="header"> Agendamento </div>
         <div className="content">
           {" "}
+          <p>Cliente:</p>
           <Dropdown />
+          <p>Profissional:</p>
           <Dropdown />
+          
         </div>
         <div className="actions">
           <Popup
-            trigger={<button className="button"> Adicionar Cliente </button>}
+            trigger={<button className="button"> Confirmar </button>}
             position="top center"
             closeOnDocumentClick
           >
@@ -30,15 +34,6 @@ const Modal = () => (
               sapiente! Laudantium, aperiam doloribus. Odit, aut.
             </span>
           </Popup>
-          <button
-            className="button"
-            onClick={() => {
-              console.log("modal closed ");
-              close();
-            }}
-          >
-            close modal
-          </button>
         </div>
       </div>
     )}
